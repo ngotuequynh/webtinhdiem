@@ -92,16 +92,19 @@ button:hover {
     font-style: italic;
     color: #888;
 }
-        .image-container {
-            width: 800px; /* Chiều rộng khung cố định */
-            overflow-x: scroll; /* Hiển thị thanh cuộn ngang */
-            border: 1px solid #ccc; /* Viền xung quanh khung */
-            white-space: nowrap; /* Giữ ảnh trong một dòng ngang */
-        }
+/* Đặt khung chứa hình ảnh */
+.image-container {
+    max-width: 100%; /* Khung chứa sẽ không vượt quá 100% chiều rộng của màn hình */
+    overflow: hidden; /* Ẩn phần hình ảnh vượt quá khung chứa nếu có */
+}
 
-        .image-container img {
-            display: inline; /* Hiển thị ảnh trong một dòng ngang */
-        }
+/* Đặt hình ảnh đáp ứng */
+.responsive-img {
+    width: 100%; /* Hình ảnh sẽ chiếm 100% chiều rộng của khung chứa */
+    height: auto; /* Chiều cao sẽ tự động thay đổi để giữ tỉ lệ hình ảnh */
+    display: block; /* Xóa khoảng trống dưới hình ảnh */
+}
+
 
     </style>
 </head>
@@ -178,8 +181,7 @@ button:hover {
         <input type="number" id="gpamuctieu" min="0" max="4" step="0.01" required />
     </div>
 <div class="image-container">
-    <img src="./anhbac.jpg" alt="Minh hoạ các bậc" width="900">
-    <!-- Đặt chiều rộng lớn hơn khung để thử nghiệm cuộn -->
+    <img src="./anhbac.jpg" alt="Minh hoạ các bậc" class="responsive-img">
 </div>
     <button onclick="calculateGPA2()" id = "nuttinh">Tính</button>
 
