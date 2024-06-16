@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font Awesome CDN Link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+
+    <!-- AOS CDN Link -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Slick Slider CDN Link -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+
+    <!-- Swipper Slider CND Link -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./CSS/index.css" />
+    <script src="JS/index.js"></script>
+    <title>Tinh Diem</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header_menu">
+        <li class="header_menu_item">
+          <a href="index.html" class="menu_item_text">Home</a>
+        </li>
+        <li class="header_menu_item">
+          <a href="./tbtltest.html" class="menu_item_text"
+            >Tính Trung Bình Tích Lũy
+          </a>
+        </li>
+        <li class="header_menu_item">
+          <a href="./test.html" class="menu_item_text">
+            Đề Xuất Điểm Mục Tiêu
+          </a>
+        </li>
+        <li class="header_menu_item">
+          <a href="./dexuat2.html" class="menu_item_text">
+            Cải Thiện Điểm
+          </a>
+        </li>
+      </div>
+    </header>
+    <main class="main">
+      <div class="main_header">
+        <h2>Tính Điểm Trung Bình Học Kỳ</h2>
+      </div>
+      <div class="main_contents">
+        <label>Số chỉ: </label>
+        <input type="number" id="credit" />
+        <label>Điểm: </label>
+        <select id="grade">
+          <option value="">Chọn điểm</option>
+          <option value="A">A</option>
+          <option value="B+">B+</option>
+          <option value="B">B</option>
+          <option value="C+">C+</option>
+          <option value="C">C</option>
+          <option value="D+">D+</option>
+          <option value="D">D</option>
+          <option value="F">F</option>
+        </select>
+        <button onclick="addSubject()" id="nut">Thêm môn học</button>
+        
+      </div>
+      <br />
+        <h3>CÁC MÔN CẦN TÍNH</h3>
+        <br />
+        <div class="main_display">
+          <div id="subjectsContainer"></div>
+        </div>
+        <br />
+        <div class="btnCalculate">
+          <button onclick="calculateGPA1()" id="nuttinh">Tính điểm trung bình</button>
+        </div>
+        
+        <br />
+        <div id="semesterGPA"></div>
+     
+      <br />
+      <script></script>
+      <p>Chú ý: không nhập học phần thể chất.</p>
+    </main>
+    <footer class="footer">
+      <h3><b>CONTACT</b></h3>
+      Email: <a href="mailto: ngotuequynh@gmail.com">ngotuequynh@gmail.com</a><br />
+      <a href="mailto: suong01234509876@gmail.com">suong01234509876@gmail.com</a>
+    </footer>
+  </body>
+</html>
