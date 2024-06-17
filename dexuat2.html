@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-adsense-account" content="ca-pub-4539069270919760" />
+    <meta
+      name="google-site-verification"
+      content="oizfsuNjGvdXcYry2KVaPqCHo3Pdq9XNdEgt01CmIxs"
+    />
+    <!-- Font Awesome CDN Link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+
+    <!-- AOS CDN Link -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Slick Slider CDN Link -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+
+    <!-- Swipper Slider CND Link -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./CSS/index.css" />
+    <script src="JS/index.js"></script>
+    <title>ĐỀ XUẤT CẢI THIỆN ĐIỂM CTU</title>
+    <style>
+      /* General reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Body styling */
+
+      /* Title styling */
+      .tieude {
+        margin: 20px 0;
+        font-size: 24px;
+        color: #181819;
+      }
+
+      /* Input group styling */
+      .input-group {
+        margin-bottom: 15px;
+        width: 100%;
+        max-width: 500px;
+      }
+
+      .input-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      .input-group input {
+        width: 100%;
+        padding: 8px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      .input-note {
+        font-size: 15px;
+        color: #777;
+      }
+
+      /* Button styling */
+      button {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      /* Result styling */
+      .result {
+        margin-top: 20px;
+        font-size: 16px;
+        color: #333;
+      }
+
+      /* Styling for nested information in results */
+      .result span {
+        font-weight: 300;
+        font-style: italic;
+        color: #888;
+      }
+      /* Đặt khung chứa hình ảnh */
+      .image-container {
+        max-width: 100%; /* Khung chứa sẽ không vượt quá 100% chiều rộng của màn hình */
+        overflow: hidden; /* Ẩn phần hình ảnh vượt quá khung chứa nếu có */
+      }
+
+      /* Đặt hình ảnh đáp ứng */
+      .responsive-img {
+        width: 100%; /* Hình ảnh sẽ chiếm 100% chiều rộng của khung chứa */
+        height: auto; /* Chiều cao sẽ tự động thay đổi để giữ tỉ lệ hình ảnh */
+        display: block; /* Xóa khoảng trống dưới hình ảnh */
+      }
+      .social-icons {
+        margin-top: 10px;
+        text-align: center; /* Căn giữa các biểu tượng */
+      }
+
+      .social-icons a {
+        display: inline-block;
+        margin: 0 10px;
+        border-radius: 0%; /* Làm cho hình ảnh có góc bo thành hình tròn */
+        overflow: hidden; /* Cắt bớt phần ngoài vùng bo tròn */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Đổ bóng cho hình ảnh */
+        transition: transform 0.3s ease-in-out; /* Hiệu ứng transform mượt mà */
+      }
+
+      .social-icons a:hover {
+        transform: scale(1.1); /* Phóng to hình ảnh khi di chuột qua */
+      }
+
+      .social-icons img {
+        width: 50px; /* Điều chỉnh kích thước theo nhu cầu */
+        height: auto; /* Chiều cao tự động điều chỉnh */
+        transition: opacity 0.3s ease-in-out; /* Hiệu ứng opacity mượt mà */
+      }
+
+      .social-icons a:hover img {
+        opacity: 0.7; /* Đổi độ mờ của hình ảnh khi di chuột qua */
+      }
+
+      .result {
+        margin-top: 20px; /* Khoảng cách từ đầu form xuống kết quả */
+      }
+
+      .result-item {
+        background-color: #f2f2f2;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+      }
+
+      .result-text {
+        font-weight: 300;
+        font-style: italic;
+        color: #888;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4539069270919760"
+      crossorigin="anonymous"
+    ></script>
+    <header class="header">
+      <div class="header_menu">
+        <li class="header_menu_item">
+          <a href="index.html" class="menu_item_text">Home</a>
+        </li>
+        <li class="header_menu_item">
+          <a href="./tbtltest.html" class="menu_item_text"
+            >Tính Trung Bình Tích Lũy
+          </a>
+        </li>
+        <li class="header_menu_item">
+          <a href="./test.html" class="menu_item_text">
+            Đề Xuất Điểm Mục Tiêu
+          </a>
+        </li>
+        <li class="header_menu_item">
+          <a href="./dexuat2.html" class="menu_item_text"> Cải Thiện Điểm </a>
+        </li>
+      </div>
+    </header>
+    <main class="main">
+      <h1 class="tieude" style="text-align: center">
+        ĐỀ XUẤT CẢI THIỆN n TÍN CHỈ ĐỂ ĐẠT MỤC TIÊU
+      </h1>
+      <div class="container">
+      <div class="input-group">
+        <label for="previous-gpa">Điểm trung bình tích lũy hiện tại:</label>
+        <input
+          type="number"
+          id="previous-gpa"
+          step="0.01"
+          min="0"
+          max="4"
+          required
+        />
+      </div>
+      <div class="input-group">
+        <label for="previous-credits">Số chỉ tích lũy hiện tại:</label>
+        <input type="number" id="previous-credits" min="0" required />
+        <p class="input-note">Bao gồm tất cả các tín chỉ điều kiện đã học</p>
+      </div>
+      <div class="input-group">
+        <label for="tongchi">Tổng tín chỉ của chương trình:</label>
+        <input type="number" id="tongchi" min="0" required />
+        <p class="input-note">
+          Theo chương trình đào tạo của trường, gợi ý: 141 chỉ
+        </p>
+      </div>
+      <div class="input-group">
+        <label for="tinhoc">Số chỉ tin học ĐÃ học:</label>
+        <input type="number" id="tinhoc" min="0" required />
+        <p class="input-note">Gợi ý: 3 chỉ</p>
+      </div>
+      <div class="input-group">
+        <label for="tienganh">Số chỉ tiếng anh ĐÃ học:</label>
+        <input type="number" id="tienganh" min="0" required />
+        <p class="input-note">Gợi ý: 10 chỉ</p>
+      </div>
+      <div class="input-group">
+        <label for="quocphong">Số chỉ quốc phòng ĐÃ học:</label>
+        <input type="number" id="quocphong" min="0" required />
+        <p class="input-note">Gợi ý: 8 chỉ</p>
+      </div>
+      <div class="input-group">
+        <label for="thechat">Số chỉ thể chất ĐÃ học:</label>
+        <input type="number" id="thechat" min="0" required />
+        <p class="input-note">Gợi ý: 3 chỉ</p>
+      </div>
+      <div class="input-group">
+        <label for="gpamuctieu">GPA mục tiêu:</label>
+        <input
+          type="number"
+          id="gpamuctieu"
+          min="0"
+          max="4"
+          step="0.01"
+          required
+        />
+      </div>
+      <div class="image-container">
+        <img src="./anhbac.jpg" alt="Minh hoạ các bậc" class="responsive-img" />
+      </div>
+      <button onclick="calculateGPA2()" id="nuttinh">Tính</button>
+
+      <div class="result" id="result"></div>
+    </main>
+
+    <script>
+      function calculateGPA2() {
+        var previousGPA = parseFloat(
+          document.getElementById("previous-gpa").value
+        );
+        var previousCredits = parseInt(
+          document.getElementById("previous-credits").value
+        );
+        var ptongchi = parseInt(document.getElementById("tongchi").value);
+        var ptinhoc = parseInt(document.getElementById("tinhoc").value);
+        var ptienganh = parseInt(document.getElementById("tienganh").value);
+        var pquocphong = parseInt(document.getElementById("quocphong").value);
+        var pthechat = parseInt(document.getElementById("thechat").value);
+        var pgpamuctieu = parseFloat(
+          document.getElementById("gpamuctieu").value
+        );
+
+        var tongchithat = ptongchi - 24;
+        var tinchithat =
+          previousCredits - pthechat - ptienganh - ptinhoc - pquocphong;
+        var khoangcach = tongchithat * pgpamuctieu - tinchithat * previousGPA;
+        var tinchithatconlai = tongchithat - tinchithat;
+        var x =
+          (tongchithat * pgpamuctieu - tinchithat * previousGPA) /
+          tinchithatconlai;
+        if (x > 0 && x <= 4) {
+          document.getElementById("result").innerText =
+            "Bạn cần đạt trung bình " +
+            x.toFixed(2) +
+            " điểm cho " +
+            tinchithatconlai +
+            " tín chỉ còn lại";
+        } else {
+          let valuea = "";
+          var m = 1;
+          while (m <= 4) {
+            valuea += '<div class="result-item">';
+            valuea +=
+              " Nếu " +
+              tinchithatconlai +
+              " chỉ còn lại của bạn được " +
+              m +
+              " điểm thì bạn cần cải thiện: </br>";
+            var temp = khoangcach - tinchithatconlai * m;
+            var k = 1;
+            while (k <= 3) {
+              var tinchican = temp / k;
+              valuea +=
+                "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +
+                Math.ceil(tinchican) +
+                "<span style='font-weight: 300; font-style: italic; color: #888;'> chỉ lên </span> " +
+                k +
+                " <span style='font-weight: 300; font-style: italic; color: #888;'>bậc</span></br>";
+              k = k + 0.5;
+            }
+            valuea += "</div>";
+            m = m + 0.5;
+          }
+          document.getElementById("result").innerHTML = valuea;
+        }
+      }
+    </script>
+    <footer class="footer">
+      <h3><b>CONTACT</b></h3>
+      Email: <a href="mailto:ngotuequynh@gmail.com">ngotuequynh@gmail.com</a
+      ><br />
+      <a href="mailto:suong01234509876@gmail.com">suong01234509876@gmail.com</a>
+
+      <!-- QR codes and icons -->
+      <div class="social-icons">
+        <a href="https://zalo.me/0837972254" target="_blank" class="zalo-icon"
+          ><img src="./Icon_of_Zalo.svg.png" alt="Zalo QR Code"
+        /></a>
+        <a
+          href="https://www.facebook.com/quynh.tue.5895?mibextid=ZbWKwL"
+          target="_blank"
+          class="facebook-icon"
+          ><img src="./2023_Facebook_icon.svg.webp" alt="Facebook Icon"
+        /></a>
+      </div>
+    </footer>
+  </body>
+</html>

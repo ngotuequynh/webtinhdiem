@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-adsense-account" content="ca-pub-4539069270919760" />
+    <meta
+      name="google-site-verification"
+      content="oizfsuNjGvdXcYry2KVaPqCHo3Pdq9XNdEgt01CmIxs"
+    />
+    <!-- Font Awesome CDN Link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+
+    <!-- AOS CDN Link -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Slick Slider CDN Link -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+
+    <!-- Swipper Slider CND Link -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./CSS/index.css" />
+    <script src="JS/index.js"></script>
+    <title>Tính toán để đạt GPA mục tiêu</title>
+    <style>
+      /* Định dạng cho header */
+      /* Header */
+      /* style.css */
+
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+      }
+
+      .header_menu {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .header_menu_item {
+        display: inline;
+        margin-right: 20px;
+      }
+
+      .menu_item_text {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      .input-container {
+        margin-bottom: 20px;
+      }
+
+      .input-label {
+        display: block;
+        margin-bottom: 5px;
+        color: #333;
+        font-weight: bold;
+      }
+
+      .input-field {
+        width: calc(100% - 22px); /* Để tránh việc input bị tràn ra ngoài */
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+
+      .input-note {
+        font-size: 15px;
+        color: #777;
+      }
+
+      .submit-button {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .submit-button:hover {
+        background-color: #45a049;
+      }
+
+      .result-container {
+        margin-top: 20px;
+      }
+      .card {
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+
+      .card p {
+        margin: 5px 0;
+      }
+
+      .card p:first-child {
+        font-weight: bold;
+      }
+      #resultContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between; /* Để các card được căn đều */
+      }
+
+      .card {
+        width: calc(
+          50% - 10px
+        ); /* Đặt width cho card, trừ đi khoảng cách giữa các card */
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 20px; /* Khoảng cách dưới cho mỗi card */
+      }
+      #resultContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px; /* Khoảng cách giữa các card */
+      }
+
+      .card {
+        width: calc(50% - 10px); /* Đặt width cho card */
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 20px;
+        box-sizing: border-box; /* Đảm bảo padding không tăng kích thước của card */
+      }
+
+      .card p {
+        margin: 5px 0;
+      }
+
+      .card p:first-child {
+        font-weight: bold;
+      }
+
+      .distribution-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .distribution-item {
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+        margin-bottom: 8px;
+        padding: 8px 12px;
+        background-color: #f5f5f5;
+        border-radius: 4px;
+      }
+      .grade-text {
+        font-weight: bold;
+        font-size: 16px;
+      }
+      .social-icons {
+        margin-top: 10px;
+        text-align: center; /* Căn giữa các biểu tượng */
+      }
+
+      .social-icons a {
+        display: inline-block;
+        margin: 0 10px;
+        border-radius: 0%; /* Làm cho hình ảnh có góc bo thành hình tròn */
+        overflow: hidden; /* Cắt bớt phần ngoài vùng bo tròn */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Đổ bóng cho hình ảnh */
+        transition: transform 0.3s ease-in-out; /* Hiệu ứng transform mượt mà */
+      }
+
+      .social-icons a:hover {
+        transform: scale(1.1); /* Phóng to hình ảnh khi di chuột qua */
+      }
+
+      .social-icons img {
+        width: 50px; /* Điều chỉnh kích thước theo nhu cầu */
+        height: auto; /* Chiều cao tự động điều chỉnh */
+        transition: opacity 0.3s ease-in-out; /* Hiệu ứng opacity mượt mà */
+      }
+
+      .social-icons a:hover img {
+        opacity: 0.7; /* Đổi độ mờ của hình ảnh khi di chuột qua */
+      }
+    </style>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4539069270919760"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function calculateTargetCredits() {
+        const totalCreditsEducationProgram = parseFloat(
+          document.getElementById("totalCreditsEducationProgram").value
+        );
+        const currentCredits = parseFloat(
+          document.getElementById("currentCredits").value
+        );
+        const targetCredits = totalCreditsEducationProgram - currentCredits;
+        document.getElementById("targetCredits").value = targetCredits;
+      }
+
+      function printDistribution(distribution, grades) {
+        var output = "<div class='distribution-container'>";
+        for (var i = 0; i < distribution.length; i++) {
+          output += `
+              <div class='distribution-item'>
+                <span class='grade-text'>${grades[i]}</span>
+                <span class='percentage-text'>${distribution[i]}</span>
+              </div>
+            `;
+        }
+        output += "</div>";
+        return output;
+      }
+      function calculateGPA(distribution, credits) {
+        var gpa = 0.0;
+        var totalCredits = 0;
+
+        for (var i = 0; i < distribution.length; i++) {
+          gpa += distribution[i] * credits[i];
+          totalCredits += distribution[i];
+        }
+
+        if (totalCredits > 0) {
+          gpa /= totalCredits;
+        }
+
+        return gpa.toFixed(2);
+      }
+
+      function generateDistribution() {
+        var totalCre = parseFloat(
+          document.getElementById("totalCreditsEducationProgram").value
+        );
+        console.log(totalCre);
+        var currentCre = parseFloat(
+          document.getElementById("currentCredits").value
+        );
+        console.log(currentCre);
+        var currentTarg = parseFloat(
+          document.getElementById("targetCredits").value
+        );
+        console.log(currentTarg);
+        var currentP = parseFloat(
+          document.getElementById("currentPoints").value
+        );
+        console.log(currentP);
+        var targetP = parseFloat(document.getElementById("targetGPA").value);
+        console.log(targetP);
+        var tmp = parseFloat(
+          (totalCre * targetP - currentCre * currentP) / currentTarg
+        );
+        console.log(tmp);
+        // Assuming you have a DOM element with the ID 'resultContainer'
+
+        if (tmp > 4.0) {
+          var resultContainer = document.getElementById("resultContainer");
+          resultContainer.innerHTML =
+            "Rất tiếc! Dù " +
+            currentTarg +
+            " chỉ còn lại đạt điểm A thì vẫn không đat được mục tiêu bạn nhé. Hãy cải thiện điểm. Chi tiết qua page Cải Thiện";
+        } else {
+          var n = 7; // Số loại điểm
+          var grades = ["A", "B+", "B", "C+", "C", "D+", "D"];
+          var credits = [4, 3.5, 3.0, 2.5, 2.0, 1.5, 1.0];
+
+          var targetCredits = parseInt(
+            document.getElementById("targetCredits").value
+          );
+          //   var targetGPA = parseFloat(document.getElementById("targetGPA").value);
+          var targetGPA = tmp;
+
+          var populationSize = 10000;
+          var maxGenerations = 10000;
+          var mutationRate = 0.1;
+
+          var resultFound = false;
+          var distributions = [];
+          var gpas = [];
+
+          // Lặp qua số lượng kết quả bạn muốn tìm
+          for (var attempt = 0; attempt < 8; attempt++) {
+            var population = [];
+
+            // Chạy một số lần giới hạn để đảm bảo có kết quả thỏa mãn
+            for (var i = 0; i < populationSize; i++) {
+              var totalCredits = 0;
+              var distribution = [];
+              for (var j = 0; j < n - 1; j++) {
+                distribution[j] = Math.floor(
+                  Math.random() * (targetCredits - totalCredits + 1)
+                );
+                totalCredits += distribution[j];
+              }
+              distribution[n - 1] = targetCredits - totalCredits;
+              population.push(distribution);
+            }
+
+            // Đánh giá mức độ thích nghi (fitness) của từng cá thể trong quần thể
+            var fitness = [];
+            for (var i = 0; i < populationSize; i++) {
+              fitness[i] = calculateGPA(population[i], credits);
+            }
+
+            // Tìm và lưu cá thể thỏa mãn yêu cầu về GPA
+            for (var i = 0; i < populationSize; i++) {
+              if (
+                parseFloat(calculateGPA(population[i], credits)) >= targetGPA &&
+                parseFloat(calculateGPA(population[i], credits)) <=
+                  targetGPA + 0.1
+              ) {
+                var gpa = calculateGPA(population[i], credits);
+                var distribution = population[i];
+                distributions.push(distribution);
+                gpas.push(gpa);
+                resultFound = true;
+                break; // Chỉ tìm một kết quả cho mỗi lần lặp
+              }
+            }
+
+            if (resultFound) {
+              resultFound = false;
+            }
+          }
+
+          // Xóa nội dung container trước khi thêm mới
+          var resultContainer = document.getElementById("resultContainer");
+          resultContainer.innerHTML = "";
+
+          var note = document.getElementById("note");
+          note.innerHTML =
+            "Với " +
+            currentTarg +
+            " chỉ còn lại thì bạn phải đạt được trung bình ít nhất " +
+            tmp.toFixed(3) +
+            " . Dưới đây là các bảng phân bố điểm dựa trên số tín chỉ còn lại để bạn có thể đạt được mục tiêu. " +
+            "Bạn có thể click lại nút (Tìm kiếm) để tìm các phân bố điểm phù hợp với mình. Chúc bạn thành công! ";
+
+          // Tạo các card và thêm vào container
+          // Tạo các card và thêm vào container
+          for (var i = 0; i < distributions.length; i++) {
+            var card = document.createElement("div");
+            card.classList.add("card");
+
+            var distributionText = document.createElement("p");
+            distributionText.innerHTML = printDistribution(
+              distributions[i],
+              grades
+            );
+
+            var gpaText = document.createElement("p");
+            gpaText.innerHTML = "GPA của số tín chỉ còn lại: " + gpas[i];
+
+            card.appendChild(distributionText);
+            card.appendChild(gpaText);
+            resultContainer.appendChild(card);
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header_menu">
+        <li class="header_menu_item">
+          <a href="index.html" class="menu_item_text">Home</a>
+        </li>
+        <li class="header_menu_item">
+          <a href="./tbtltest.html" class="menu_item_text"
+            >Tính Trung Bình Tích Lũy
+          </a>
+        </li>
+        <li class="header_menu_item">
+          <a href="./test.html" class="menu_item_text">
+            Đề Xuất Điểm Mục Tiêu
+          </a>
+        </li>
+        <li class="header_menu_item">
+          <a href="./dexuat2.html" class="menu_item_text"> Cải Thiện Điểm </a>
+        </li>
+      </div>
+    </header>
+
+    <main class="main">
+      <h1>Tính toán số tín chỉ còn lại có đạt mục tiêu hay không</h1>
+
+      <div class="input-container">
+        <label for="totalCreditsEducationProgram" class="input-label"
+          >Tổng số tín chỉ chương trình đào tạo:</label
+        >
+        <input
+          type="number"
+          id="totalCreditsEducationProgram"
+          class="input-field"
+          required
+        />
+        <p class="input-note">
+          Lưu ý: Nhập tổng số tín chỉ của chương trình đào tạo( KHÔNG BAO GỒM
+          CÁC TÍN CHỈ ĐIỀU KIỆN: 10 AVCB, 3 Tinhọc, 3 ThểChất, 8 GDQP)
+        </p>
+      </div>
+
+      <div class="input-container">
+        <label for="currentCredits" class="input-label"
+          >Số tín chỉ tích lũy đến hiện tại:</label
+        >
+        <input
+          type="number"
+          id="currentCredits"
+          class="input-field"
+          oninput="calculateTargetCredits()"
+          required
+        />
+        <p class="input-note">
+          Nhập tổng số tín chỉ tích lũy gần nhất (Tổng số tín chỉ tích lũy
+          <b>KHÔNG</b> bao gồm các tín chỉ điều kiện <b>bạn ĐÃ HỌC</b>: 10 AVCB,
+          3 Tinhọc, 3 ThểChất, 8 GDQP)
+        </p>
+      </div>
+
+      <div class="input-container">
+        <label for="currentPoints" class="input-label"
+          >Điểm tích luỹ tính đến hiện tại của số tín chỉ trên:</label
+        >
+        <input type="number" id="currentPoints" class="input-field" required />
+        <p class="input-note">
+          Lấy "Điểm trung bình tích luỹ" từ Kết quả học tập của học kì gần nhất
+        </p>
+      </div>
+
+      <div class="input-container">
+        <label for="targetGPA" class="input-label"
+          >Điểm tích lũy mục tiêu muốn đạt:</label
+        >
+        <input
+          type="number"
+          step="0.01"
+          id="targetGPA"
+          class="input-field"
+          required
+        />
+      </div>
+
+      <div class="input-container">
+        <label for="targetCredits" class="input-label"
+          >Số tín chỉ cần thiết:</label
+        >
+        <input
+          type="number"
+          id="targetCredits"
+          class="input-field"
+          readonly
+          required
+        />
+      </div>
+
+      <button
+        class="submit-button"
+        type="submit"
+        onclick="generateDistribution()"
+      >
+        Tìm kiếm
+      </button>
+      <div class="note" id="note"></div>
+      <div id="resultContainer" class="result-container"></div>
+    </main>
+    <footer class="footer">
+      <h3><b>CONTACT</b></h3>
+      Email: <a href="mailto:ngotuequynh@gmail.com">ngotuequynh@gmail.com</a
+      ><br />
+      <a href="mailto:suong01234509876@gmail.com">suong01234509876@gmail.com</a>
+
+      <!-- QR codes and icons -->
+      <div class="social-icons">
+        <a href="https://zalo.me/0837972254" target="_blank" class="zalo-icon"
+          ><img src="./Icon_of_Zalo.svg.png" alt="Zalo QR Code"
+        /></a>
+        <a
+          href="https://www.facebook.com/quynh.tue.5895?mibextid=ZbWKwL"
+          target="_blank"
+          class="facebook-icon"
+          ><img src="./2023_Facebook_icon.svg.webp" alt="Facebook Icon"
+        /></a>
+      </div>
+    </footer>
+  </body>
+</html>
