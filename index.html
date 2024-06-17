@@ -30,6 +30,36 @@
     <link rel="stylesheet" href="./CSS/index.css" />
     <script src="JS/index.js"></script>
     <title>Tinh Diem TBHK CTU</title>
+    <style>
+.social-icons {
+    margin-top: 10px;
+    text-align: center; /* Căn giữa các biểu tượng */
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+    border-radius: 0%; /* Làm cho hình ảnh có góc bo thành hình tròn */
+    overflow: hidden; /* Cắt bớt phần ngoài vùng bo tròn */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Đổ bóng cho hình ảnh */
+    transition: transform 0.3s ease-in-out; /* Hiệu ứng transform mượt mà */
+}
+
+.social-icons a:hover {
+    transform: scale(1.1); /* Phóng to hình ảnh khi di chuột qua */
+}
+
+.social-icons img {
+    width: 50px; /* Điều chỉnh kích thước theo nhu cầu */
+    height: auto; /* Chiều cao tự động điều chỉnh */
+    transition: opacity 0.3s ease-in-out; /* Hiệu ứng opacity mượt mà */
+}
+
+.social-icons a:hover img {
+    opacity: 0.7; /* Đổi độ mờ của hình ảnh khi di chuột qua */
+}
+
+    </style>
   </head>
   <body>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4539069270919760"
@@ -98,8 +128,14 @@
     </main>
     <footer class="footer">
       <h3><b>CONTACT</b></h3>
-      Email: <a href="mailto: ngotuequynh@gmail.com">ngotuequynh@gmail.com</a><br />
-      <a href="mailto: suong01234509876@gmail.com">suong01234509876@gmail.com</a>
+      Email: <a href="mailto:ngotuequynh@gmail.com">ngotuequynh@gmail.com</a><br />
+      <a href="mailto:suong01234509876@gmail.com">suong01234509876@gmail.com</a>
+    
+      <!-- QR codes and icons -->
+      <div class="social-icons">
+        <a href="https://zalo.me/0837972254" class="zalo-icon"><img src="./Icon_of_Zalo.svg.png" alt="Zalo QR Code"></a>
+        <a href="https://www.facebook.com/quynh.tue.5895?mibextid=ZbWKwL" class="facebook-icon"><img src="./2023_Facebook_icon.svg.webp" alt="Facebook Icon"></a>
+      </div>
     </footer>
   </body>
 </html>
