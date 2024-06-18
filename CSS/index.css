@@ -1,4 +1,27 @@
 /* CSS for index.css */
+
+
+
+@media (max-width: 600px) {
+  .header_menu {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header_menu_item {
+    margin: 0.5rem 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
 .delete_button {
   background-color: #ff4d4d;
   color: white;
