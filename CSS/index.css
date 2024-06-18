@@ -3,6 +3,24 @@
 
 
 
+.header_menu {
+  display: flex;
+  justify-content: space-around; /* Căn giữa các mục menu ngang */
+  overflow: hidden; /* Ngăn các phần dư của các mục menu bị tràn ra ngoài */
+}
+
+.header_menu_item {
+  flex: 1 1 auto; /* Cho phép các mục menu co lại */
+  text-align: center; /* Căn giữa nội dung trong mục menu */
+  margin: 0 10px; /* Khoảng cách giữa các mục menu */
+  white-space: nowrap; /* Ngăn các mục menu bị ngắt dòng */
+}
+
+@media (max-width: 600px) {
+  .header_menu_item {
+    flex: none; /* Đảm bảo các mục menu không co lại khi độ rộng màn hình nhỏ hơn 600px */
+  }
+}
 
 
 
