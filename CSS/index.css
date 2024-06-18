@@ -3,15 +3,15 @@
 
 
 
-@media (max-width: 600px) {
-  .header_menu {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+.header_menu {
+  display: flex;
+  flex-wrap: nowrap; /* Không cho phép xuống dòng */
+  overflow-x: auto; /* Cho phép cuộn ngang nếu không đủ không gian */
+}
 
-  .header_menu_item {
-    margin: 0.5rem;
-  }
+.header_menu_item {
+  white-space: nowrap; /* Ngăn các mục menu bị ngắt dòng */
+  margin: 0 10px; /* Khoảng cách giữa các mục menu */
 }
 
 
