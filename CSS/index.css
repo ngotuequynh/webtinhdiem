@@ -3,6 +3,16 @@
 
 
 
+@media (max-width: 600px) {
+  .header_menu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .header_menu_item {
+    margin: 0.5rem;
+  }
+}
 
 
 
