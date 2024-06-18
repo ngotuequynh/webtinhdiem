@@ -2,17 +2,24 @@
 
 
 
-
 .header_menu {
   display: flex;
-  flex-wrap: nowrap; /* Không cho phép xuống dòng */
-  overflow-x: auto; /* Cho phép cuộn ngang nếu không đủ không gian */
+  flex-wrap: nowrap; /* Ngăn các mục menu xuống dòng */
+  overflow: hidden; /* Ngăn phần dư của các mục menu bị tràn ra ngoài */
 }
 
 .header_menu_item {
   white-space: nowrap; /* Ngăn các mục menu bị ngắt dòng */
   margin: 0 10px; /* Khoảng cách giữa các mục menu */
+  font-size: 1.1rem; /* Kích thước font chữ mặc định */
 }
+
+@media (max-width: 600px) {
+  .header_menu_item {
+    font-size: 0.9rem; /* Giảm kích thước font chữ khi độ rộng màn hình nhỏ hơn 600px */
+  }
+}
+
 
 
 
