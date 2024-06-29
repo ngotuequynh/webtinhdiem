@@ -67,6 +67,7 @@ h1 {
 
 .input-group1 {
   margin-bottom: 20px;
+  margin-right: 0.5cm;
 }
 
 .input-group1 label {
@@ -248,12 +249,17 @@ h1 {
       <h1>Tính điểm trung bình tích lũy</h1>
       <div class="input-group1">
         <label for="previous-gpa">Điểm trung bình tích lũy gần nhất:</label>
-        <input type="number" id="previous-gpa" step="0.01" min="0" max="4" required />
-        <p>Điểm tích lũy ở kỳ gần nhất</p>
+        <input type="number" id="previous-gpa" step="0.01" min="0" max="4" required
+        oninput="validateGPAInput(event)"
+        />
+        
+
+        <p>Điểm tích lũy ở kỳ gần nhất, ví dụ: 3.2</p>
       </div>
       <div class="input-group1">
         <label for="previous-credits">Số chỉ tích lũy từ các kỳ trước:</label>
-        <input type="number" id="previous-credits" min="0" required />
+        <input type="number" id="previous-credits" min="0" oninput="if (parseFloat(this.value) > 200) this.value = '200';" required onkeydown="preventLeadingZero(event)"
+        />
         <p>Nhập tổng số tín chỉ tích lũy gần nhất (Tổng số tín chỉ tích lũy <b>KHÔNG</b> bao gồm các tín chỉ điều kiện mà <b>bạn ĐÃ HỌC</b>: 10 AVCB, 3 Tinhọc, 3 ThểChất, 8 GDQP)</p>
       </div>
       
@@ -267,7 +273,9 @@ h1 {
       <div id="caithien" class="caithien-container">
         <div id="main_content">
           <label>Số chỉ: </label>
-          <input type="number" id="credit_1" disabled />
+          <input type="number" id="credit_1" min="1"  placeholder="Nhập số tín chỉ từng hp"
+          onkeydown="preventLeadingZero(event)"
+          required disabled  />
           <label>Điểm cũ: </label>
           <select id="oldGrade_1" disabled>
             <option value="">Chọn điểm</option>
@@ -307,7 +315,9 @@ h1 {
       <p>Lưu ý: chỉ nhập những học phần có tính tích luỹ và không nhập các chỉ cải thiện</p>
       <div class="main_contents">
         <label>Số chỉ: </label>
-        <input type="number" id="credit"  />
+        <input type="number"           placeholder="Nhập số tín chỉ từng học phần"
+        id="credit" min="1" onkeydown="preventLeadingZero(event)"
+        required  />
         <label>Điểm: </label>
         <select id="grade">
           <option value="">Chọn điểm</option>
@@ -384,9 +394,9 @@ h1 {
        //document.write(diemcaithien);
         //var totalCumulativePoints = cumulativePoints + currentCumulativePoints;
         var cumulativeGPA = (cumulativePoints+diemcaithien+currentCumulativePoints)/totalCredits;
-
-        document.getElementById("result").textContent =
-          "Điểm trung bình tích lũy: " + cumulativeGPA.toFixed(2);
+        var tongallchi=previousCredits+tinchi;
+        document.getElementById("result").textContent ="Tổng chỉ:"+tongallchi+ 
+          " và điểm trung bình tích lũy: " + cumulativeGPA.toFixed(2);
           
       }
     </script>
