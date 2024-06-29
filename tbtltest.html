@@ -275,6 +275,7 @@ h1 {
           <label>Số chỉ: </label>
           <input type="number" id="credit_1" min="1"  placeholder="Nhập số tín chỉ từng hp"
           onkeydown="preventLeadingZero(event)"
+          oninput="if (parseFloat(this.value) > 50) this.value = '50';"
           required disabled  />
           <label>Điểm cũ: </label>
           <select id="oldGrade_1" disabled>
