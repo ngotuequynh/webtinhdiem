@@ -66,7 +66,8 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
       .input-group {
         margin-bottom: 15px;
         width: 100%;
-        max-width: 500px;
+        /*max-width: 500px;*/
+        margin-right: 10cm;
       }
 
       .input-group label {
@@ -204,6 +205,7 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
       <h1 class="tieude" style="text-align: center">
         ĐỀ XUẤT CẢI THIỆN n TÍN CHỈ ĐỂ ĐẠT MỤC TIÊU
       </h1>
+      <p style="color: #888;"><i>Lưu ý: chức năng chỉ có tác dụng khi tất cả các tín chỉ còn lại của bạn dù được A vẫn không đạt mục tiêu.</i></p>
       <div class="container">
       <div class="input-group">
         <label for="previous-gpa">Điểm trung bình tích lũy hiện tại:</label>
@@ -213,39 +215,46 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
           step="0.01"
           min="0"
           max="4"
+          oninput="validateGPAInput(this)"
           required
         />
       </div>
       <div class="input-group">
         <label for="previous-credits">Số chỉ tích lũy hiện tại:</label>
-        <input type="number" id="previous-credits" min="0" required />
+        <input type="number" id="previous-credits" min="1" oninput="if (parseFloat(this.value) > 200) this.value = '200';"  onkeydown="preventLeadingZero(event)"
+        required />
         <p class="input-note">Bao gồm tất cả các tín chỉ điều kiện đã học</p>
       </div>
       <div class="input-group">
         <label for="tongchi">Tổng tín chỉ của chương trình:</label>
-        <input type="number" id="tongchi" min="0" required />
+        <input type="number" id="tongchi" min="1" oninput="if (parseFloat(this.value) > 200) this.value = '200';"  onkeydown="preventLeadingZero(event)"
+         required />
         <p class="input-note">
           Theo chương trình đào tạo của trường, gợi ý: 141 chỉ
         </p>
       </div>
       <div class="input-group">
         <label for="tinhoc">Số chỉ tin học ĐÃ học:</label>
-        <input type="number" id="tinhoc" min="0" required />
+        <input type="number" id="tinhoc" min="0" max="3" onkeydown="preventLeadingZero(event)" required
+        oninput="if (parseFloat(this.value) > 3) this.value = '3';"  />
         <p class="input-note">Gợi ý: 3 chỉ</p>
       </div>
       <div class="input-group">
         <label for="tienganh">Số chỉ tiếng anh ĐÃ học:</label>
-        <input type="number" id="tienganh" min="0" required />
+        <input type="number" id="tienganh" min="0" required max="15" onkeydown="preventLeadingZero(event)"
+        oninput="if (parseFloat(this.value) > 15) this.value = '15';" />
         <p class="input-note">Gợi ý: 10 chỉ</p>
       </div>
       <div class="input-group">
         <label for="quocphong">Số chỉ quốc phòng ĐÃ học:</label>
-        <input type="number" id="quocphong" min="0" required />
+        <input type="number" id="quocphong" min="0" max="8" onkeydown="preventLeadingZero(event)" required
+        oninput="if (parseFloat(this.value) > 8) this.value = '8';"  />
         <p class="input-note">Gợi ý: 8 chỉ</p>
       </div>
       <div class="input-group">
         <label for="thechat">Số chỉ thể chất ĐÃ học:</label>
-        <input type="number" id="thechat" min="0" required />
+        <input type="number" id="thechat" min="0" max="3" onkeydown="preventLeadingZero(event)" required 
+        oninput="if (parseFloat(this.value) > 3) this.value = '3';" />
         <p class="input-note">Gợi ý: 3 chỉ</p>
       </div>
       <div class="input-group">
@@ -256,6 +265,7 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
           min="0"
           max="4"
           step="0.01"
+          oninput="validateGPAInput(this)"
           required
         />
       </div>
@@ -314,6 +324,7 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
             var k = 1;
             while (k <= 3) {
               var tinchican = temp / k;
+              
               valuea +=
                 "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +
                 Math.ceil(tinchican) +
@@ -321,7 +332,7 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
                 k +
                 " <span style='font-weight: 300; font-style: italic; color: #888;'>bậc</span></br>";
               k = k + 0.5;
-            }
+              }
             valuea += "</div>";
             m = m + 0.5;
           }
