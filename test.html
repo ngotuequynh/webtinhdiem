@@ -10,18 +10,27 @@
       content="oizfsuNjGvdXcYry2KVaPqCHo3Pdq9XNdEgt01CmIxs"
     />
     <!-- Default Statcounter code for Tinhdiem https://tinhdiemctu.netlify.app/ -->
-<script type="text/javascript">
-var sc_project=13008768; 
-var sc_invisible=1; 
-var sc_security="dba5442d"; 
-</script>
-<script type="text/javascript"
-src="https://www.statcounter.com/counter/counter.js" async></script>
-<noscript><div class="statcounter"><a title="Web Analytics"
-href="https://statcounter.com/" target="_blank"><img class="statcounter"
-src="https://c.statcounter.com/13008768/0/dba5442d/1/" alt="Web Analytics"
-referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
-<!-- End of Statcounter Code -->
+    <script type="text/javascript">
+      var sc_project = 13008768;
+      var sc_invisible = 1;
+      var sc_security = "dba5442d";
+    </script>
+    <script
+      type="text/javascript"
+      src="https://www.statcounter.com/counter/counter.js"
+      async
+    ></script>
+    <noscript
+      ><div class="statcounter">
+        <a title="Web Analytics" href="https://statcounter.com/" target="_blank"
+          ><img
+            class="statcounter"
+            src="https://c.statcounter.com/13008768/0/dba5442d/1/"
+            alt="Web Analytics"
+            referrerpolicy="no-referrer-when-downgrade"
+        /></a></div
+    ></noscript>
+    <!-- End of Statcounter Code -->
     <!-- Font Awesome CDN Link  -->
     <link
       rel="stylesheet"
@@ -434,6 +443,9 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
           type="number"
           id="totalCreditsEducationProgram"
           class="input-field"
+          min="1"
+          oninput="if (parseFloat(this.value) > 200) this.value = '200';"
+          onkeydown="preventLeadingZero(event)"
           required
         />
         <p class="input-note">
@@ -450,7 +462,9 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
           type="number"
           id="currentCredits"
           class="input-field"
-          oninput="calculateTargetCredits()"
+          oninput="handleCurrentCreditsInput(this)"
+          min="1"
+          onkeydown="preventLeadingZero(event)"
           required
         />
         <p class="input-note">
@@ -464,7 +478,15 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
         <label for="currentPoints" class="input-label"
           >Điểm tích luỹ tính đến hiện tại của số tín chỉ trên:</label
         >
-        <input type="number" id="currentPoints" class="input-field" required />
+        <input
+          type="number"
+          id="currentPoints"
+          class="input-field"
+          step="0.01"
+          min="0"
+          required
+          oninput="validateGPAInput(this)"
+        />
         <p class="input-note">
           Lấy "Điểm trung bình tích luỹ" từ Kết quả học tập của học kì gần nhất
         </p>
@@ -479,6 +501,8 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
           step="0.01"
           id="targetGPA"
           class="input-field"
+          min="0"
+          oninput="validateGPAInput(this)"
           required
         />
       </div>
