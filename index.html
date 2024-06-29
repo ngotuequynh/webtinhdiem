@@ -124,6 +124,7 @@
           id="credit"
           min="1"
           max="50"
+          oninput="if (parseFloat(this.value) > 50) this.value = '50';"
           placeholder="Nhập số tín chỉ từng học phần"
           onkeydown="preventLeadingZero(event)"
           required
