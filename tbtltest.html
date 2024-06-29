@@ -317,6 +317,7 @@ h1 {
       <div class="main_contents">
         <label>Số chỉ: </label>
         <input type="number"           placeholder="Nhập số tín chỉ từng học phần"
+        oninput="if (parseFloat(this.value) > 50) this.value = '50';"
         id="credit" min="1" onkeydown="preventLeadingZero(event)"
         required  />
         <label>Điểm: </label>
